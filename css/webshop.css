@@ -8,9 +8,9 @@ body {
     color: #ffffff;
     width: 100%;
     position: fixed;
-    top: 1px;
+    top: 0px;
     left: 0;
-    padding: 6px 16px;
+    padding: 7px 16px;
     overflow: hidden;
     z-index: 10;
     display: flex;

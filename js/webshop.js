@@ -33,4 +33,6 @@ async function renderHomeProducten() {
 //     renderHomeProducten();
 // });
     renderHomeProducten();
+
+    
  

@@ -1,76 +1,37 @@
-/* =========================
-   BASIS RESET
-   ========================= */
-
-/* Hier wordt alles op 0 gezet.
-   Dat gebeurt zodat de browser standaard marges en padding niet alles kapot maken. */
 body {
     margin: 0;
     padding: 0;
 }
 
-
-/* =========================
-   TOP BAR
-   ========================= */
-
-/* Hier wordt de zwarte balk bovenaan gemaakt.
-   Die blijft vast staan zodat de info altijd zichtbaar is. */
+/* TOP BAR */
 .bovenste-balk {
     background-color: #000000;
     color: #ffffff;
     width: 100%;
-
-    /* fixed zorgt ervoor dat de balk altijd bovenaan blijft,
-       ook als je naar beneden scrolt. */
     position: fixed;
     top: 0px;
     left: 0;
-
     padding: 7px 16px;
     overflow: hidden;
-
-    /* z-index zorgt ervoor dat deze balk boven andere elementen blijft. */
     z-index: 10;
-
     display: flex;
     align-items: center;
 }
 
-
-/* =========================
-   MARQUEE (bewegende tekst)
-   ========================= */
-
-/* Hier wordt de tekst in één lijn gezet zonder te breken.
-   Zo kan hij horizontaal blijven scrollen. */
+/* MARQUEE */
 .marquee-tekst {
     white-space: nowrap;
     display: inline-block;
-
-    /* Hier wordt de tekst eerst helemaal naar rechts geduwd,
-       zodat hij van rechts naar links kan binnenkomen. */
     padding-left: 100%;
-
-    /* Hier wordt de animatie gestart die de tekst laat bewegen. */
     animation: tekst-loop 15s linear infinite;
 }
 
-
-/* Hier wordt de animatie zelf gedefinieerd.
-   De tekst gaat van rechts naar links over het scherm. */
 @keyframes tekst-loop {
     0% { transform: translate3d(0, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
 }
 
-
-/* =========================
-   NAVIGATIE BAR
-   ========================= */
-
-/* Hier wordt de navigatie onder de topbar gezet.
-   Hij is ook fixed zodat hij altijd zichtbaar blijft. */
+/* NAV */
 .home {
     position: fixed;
     top: 32px;
@@ -81,9 +42,6 @@ body {
     z-index: 9;
 }
 
-
-/* Hier wordt de inhoud van de nav mooi gecentreerd.
-   Alles wordt verticaal gestapeld. */
 .overlay {
     background-color: rgba(204, 231, 255, 0.95);
     padding: 17px 16px;
@@ -92,17 +50,12 @@ body {
     align-items: center;
 }
 
-
-/* Hier wordt het menu horizontaal naast elkaar gezet.
-   Dat gebeurt met flexbox. */
 .menu {
     display: flex;
     gap: 12px;
     list-style: none;
 }
 
-
-/* Hier worden de links gestyled zodat ze eruitzien als knoppen. */
 .menu a {
     text-decoration: none;
     color: #111;
@@ -110,36 +63,23 @@ body {
     border-radius: 4px;
 }
 
-
-/* Hier wordt een hover effect toegevoegd.
-   Als je erover gaat, krijgt de link een lichte achtergrond. */
 .menu a:hover {
     background: rgba(0,0,0,0.08);
 }
 
-
-/* =========================
-   SEARCH BAR
-   ========================= */
-
-/* Hier wordt de zoekbalk opgemaakt.
-   Hij krijgt ruimte bovenaan en wordt horizontaal gezet. */
+/* SEARCH */
 .search-form {
     margin-top: 10px;
     display: flex;
     gap: 8px;
 }
 
-
-/* Input veld styling */
 .search-form input {
     padding: 6px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-
-/* Zoekknop styling */
 .search-form button {
     padding: 6px 10px;
     border: none;
@@ -148,24 +88,12 @@ body {
     cursor: pointer;
 }
 
-
-/* =========================
-   MAIN CONTENT
-   ========================= */
-
-/* Hier wordt ruimte gemaakt bovenaan,
-   zodat content niet onder de fixed navbar valt. */
+/* MAIN */
 .main-content {
     margin-top: 160px;
 }
 
-
-/* =========================
-   PRODUCT GRID
-   ========================= */
-
-/* Hier worden producten in een grid gezet.
-   Dat betekent automatisch mooi verdeeld over scherm. */
+/* PRODUCTS */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -174,39 +102,25 @@ body {
     margin: 0 auto;
 }
 
-
-/* Elke productkaart krijgt een witte box. */
 .product-card {
     background: #f9f9f9;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-
-    /* Hier gebeurt een kleine animatie bij hover. */
     transition: 0.3s;
 }
 
-
-/* Wanneer je over een product gaat,
-   gaat hij iets omhoog voor een “klikbaar gevoel”. */
 .product-card:hover {
     transform: translateY(-5px);
 }
 
-
-/* Product afbeelding styling */
 .product-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-
-/* =========================
-   ADD TO CART BUTTON
-   ========================= */
-
-/* Dit is de knop om producten toe te voegen aan winkelwagen. */
+/* BUTTON */
 .add-to-cart {
     background: #2c3e50;
     color: white;
@@ -215,22 +129,13 @@ body {
     cursor: pointer;
 }
 
-
-/* =========================
-   CONTACT PAGINA
-   ========================= */
-
-/* Hier wordt de contact container gecentreerd.
-   Zo staat het formulier mooi in het midden. */
+/* CONTACT */
 .contact-container {
     max-width: 800px;
     margin: 180px auto;
     padding: 20px;
 }
 
-
-/* Inputs en textarea krijgen dezelfde stijl.
-   Zo ziet alles uniform en netjes uit. */
 .contact-container input,
 .contact-container textarea {
     width: 100%;
@@ -238,8 +143,6 @@ body {
     padding: 10px;
 }
 
-
-/* Knop van contactformulier */
 .contact-container button {
     background: #2c3e50;
     color: white;
@@ -247,13 +150,7 @@ body {
     border: none;
 }
 
-
-/* =========================
-   BLOG PAGINA
-   ========================= */
-
-/* Hier worden blogkaarten in een grid gezet.
-   Zo staan ze netjes naast elkaar. */
+/* BLOG */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -262,8 +159,6 @@ body {
     max-width: 1100px;
 }
 
-
-/* Elke blogpost krijgt een kaartvorm. */
 .blog-card {
     background: white;
     padding: 15px;
@@ -272,20 +167,13 @@ body {
     cursor: pointer;
 }
 
-
-/* =========================
-   ABOUT PAGINA
-   ========================= */
-
-/* Hier wordt de about sectie gecentreerd. */
+/* ABOUT */
 .about-container {
     max-width: 900px;
     margin: 180px auto;
     padding: 20px;
 }
 
-
-/* Accordion knop (uitklapbare sectie) */
 .accordion {
     background: #2c3e50;
     color: white;
@@ -294,3 +182,8 @@ body {
     margin-top: 10px;
 }
 
+.panel {
+    display: none;
+    padding: 10px;
+    background: #f1f1f1;
+}

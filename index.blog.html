@@ -3,39 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webshop</title>
-    <link rel="stylesheet" href="css/webshop.css">
-    <script src = "app.js"></script>
-    <script type="module" src="js/webshop.js" ></script>
-   
+    <title>Blog - Webshop</title>
 
+    <!-- CSS bestanden: zorgen voor de layout en styling -->
+    <link rel="stylesheet" href="css/webshop.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- JavaScript voor algemene functies zoals cart, menu, etc -->
+    <script src="app.js"></script>
 </head>
+
 <body>
+
+    <!-- ========================= -->
+    <!-- BOVENSTE INFO BALK -->
+    <!-- ========================= -->
     <div class="bovenste-balk">
         <div class="marquee-tekst">
-            <span>Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven, alihaydarberk2008@gmail.com, +32 474 12 34 56</span>
+            <span>
+                Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven,
+                alihaydarberk2008@gmail.com, +32 474 12 34 56
+            </span>
         </div>
     </div>
 
+    <!-- ========================= -->
+    <!-- NAVIGATIE -->
+    <!-- ========================= -->
     <section class="home">
         <div class="overlay">
+
             <header class="home_header">
-                <ul class="menu">
-                    <li><a href="webshop_home.html">HOME</a></li>
+
+                <!-- Menu knop (voor mobiel menu openen/sluiten) -->
+                <button class="menu-toggle" id="menuToggle">☰</button>
+
+                <!-- Navigatie links -->
+                <ul class="menu" id="navMenu">
+                    <li><a href="index_home.html">PRODUCTS</a></li>
                     <li><a href="index_about.html">ABOUT</a></li>
-                    <li><a href="index.blog.html">BLOG</a></li>
+                    <li><a href="index.blog.html" class="active-link">BLOG</a></li>
                     <li><a href="index_contact.html">CONTACT</a></li>
                 </ul>
-            </header>
-            <div>
-            <form action="Search" class="search-form">
-     <input type="search" autofocus required>
-        <i class="fa fa-search"></i>
-        <button onclick="clearInput()">Clear</a>
-        </form>
-        </div>
 
-        
-    
-        
+                <!-- Winkelwagen knop -->
+                <button class="cart-btn" id="cartBtn">
+                    🛒 <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+
+            </header>
+        </div>
     </section>
+
+    <!-- ========================= -->
+    <!-- HOOFDINHOUD -->
+    <!-- ========================= -->
+    <main class="main-content">
+
+        <!-- HERO (titel bovenaan pagina) -->
+        <section class="page-hero blog-hero">
+            <div class="page-hero-inner">
+
+                <h1>Tech Blog</h1>
+
+                <p>
+                    Het laatste nieuws over gaming PC's, componenten en technologie
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ========================= -->
+        <!-- UITGELICHT ARTIKEL -->
+        <!-- ========================= -->
+        <section class="blog-featured">
+
+            <div class="blog-featured-inner">
+
+                <!-- Afbeelding links -->
+                <div class="blog-featured-img">
+                    <div class="blog-img-placeholder featured-placeholder">
+                        <span>🖥️</span>
+                    </div>
+                </div>
+
+                <!-- Tekst rechts -->
+                <div class="blog-featured-tekst">
+
+                    <span class="blog-tag">Uitgelicht</span>
+
+                    <h2>RTX 5090 Review: De Snelste GPU Ooit Getest</h2>
+
+                    <p>
+                        Dit artikel bespreekt de nieuwste grafische kaart en test prestaties in games en AI.
+                    </p>
+
+                    <div class="blog-meta">
+                        <span>📅 15 juni 2026</span>
+                        <span>✍️ Redactie</span>
+                        <span>⏱ 8 min lezen</span>
+                    </div>
+
+                    <!-- Knop die een melding toont -->
+                    <button onclick="window.showToast('Volledig artikel komt binnenkort online!')">
+                        Lees meer →
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= -->
+        <!-- BLOG SLIDER -->
+        <!-- ========================= -->
+        <section class="blog-slider-sectie">
+
+            <div class="blog-slider-header">
+                <h2>Recente Artikelen</h2>
+
+                <!-- Knoppen om slider te bewegen -->
+                <div>
+                    <button id="prev-btn" onclick="scrollBlog(-1)">‹</button>
+                    <button id="next-btn" onclick="scrollBlog(1)">›</button>
+                </div>
+            </div>
+
+            <!-- Hier zitten alle blog kaarten -->
+            <div class="blog-slider-wrapper">
+                <div class="blog-slider-track" id="blog-track">
+
+                    <!-- Elke blogkaart = 1 artikel -->
+                    <div class="blog-kaart">
+                        <h3>Intel vs AMD</h3>
+                        <p>Vergelijking van CPU prestaties in 2026.</p>
+                    </div>
+
+                    <div class="blog-kaart">
+                        <h3>Gaming Setup</h3>
+                        <p>Beste PC build onder 2000 euro.</p>
+                    </div>
+
+                    <div class="blog-kaart">
+                        <h3>Cooling</h3>
+                        <p>Lucht vs waterkoeling uitgelegd.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= -->
+        <!-- NIEUWSBRIEF -->
+        <!-- ========================= -->
+        <section class="nieuwsbrief-sectie">
+
+            <div class="nieuwsbrief-inner">
+
+                <h2>Blijf op de hoogte</h2>
+
+                <p>Ontvang updates en deals in je inbox.</p>
+
+                <div class="nieuwsbrief-form">
+
+                    <!-- Input waar gebruiker email ingeeft -->
+                    <input type="email" id="newsletterEmail" placeholder="jouw@email.com">
+
+                    <!-- knop die functie start -->
+                    <button onclick="inschrijvenNieuwsbrief()">
+                        Inschrijven
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+    <footer class="site-footer">
+        <p>2026 Webshop. All rights reserved.</p>
+    </footer>
+
+    <!-- ========================= -->
+    <!-- BLOG SLIDER LOGICA (JS) -->
+    <!-- ========================= -->
+    <script>
+
+        // Deze variabele houdt bij welke blog je ziet
+        let blogPositie = 0;
+
+        // Hoe breed 1 kaart is (plus ruimte tussen)
+        const kaartBreedte = 344;
+
+        // Functie om slider te bewegen
+        function scrollBlog(richting) {
+
+            const track = document.getElementById("blog-track");
+
+            // aantal kaarten in slider
+            const aantalKaarten = track.children.length;
+
+            // hoeveel kaarten passen op scherm
+            const zichtbaar = Math.floor(track.parentElement.offsetWidth / kaartBreedte);
+
+            // maximum positie
+            const maxPositie = Math.max(aantalKaarten - zichtbaar, 0);
+
+            // positie aanpassen
+            blogPositie += richting;
+
+            // niet buiten grenzen laten gaan
+            if (blogPositie < 0) blogPositie = 0;
+            if (blogPositie > maxPositie) blogPositie = maxPositie;
+
+            // slider verplaatsen
+            track.style.transform = `translateX(-${blogPositie * kaartBreedte}px)`;
+
+            // knoppen aan/uit zetten
+            document.getElementById("prev-btn").disabled = blogPositie === 0;
+            document.getElementById("next-btn").disabled = blogPositie >= maxPositie;
+        }
+
+        // =========================
+        // SWIPE FUNCTIE (mobiel)
+        // =========================
+
+        const track = document.getElementById("blog-track");
+
+        let startX = 0;
+
+        // wanneer je begint met swipen
+        track.addEventListener("touchstart", (e) => {
+
+            // e = informatie van de touch
+            // clientX = horizontale positie
+            startX = e.touches[0].clientX;
+        });
+
+        // wanneer je stopt met swipen
+        track.addEventListener("touchend", (e) => {
+
+            const endX = e.changedTouches[0].clientX;
+
+            const diff = startX - endX;
+
+            // alleen reageren als swipe groot genoeg is
+            if (Math.abs(diff) > 50) {
+
+                scrollBlog(diff > 0 ? 1 : -1);
+            }
+        });
+
+        // =========================
+        // NIEUWSBRIEF
+        // =========================
+
+        function inschrijvenNieuwsbrief() {
+
+            const input = document.getElementById("newsletterEmail");
+
+            const email = input.value.trim();
+
+            // simpele controle of email correct is
+            const geldig = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            if (!geldig) {
+                window.showToast("Vul een geldig e-mailadres in");
+                return;
+            }
+
+            window.showToast("Bedankt voor je inschrijving!");
+
+            input.value = "";
+        }
+
+    </script>
+
+</body>
+</html>

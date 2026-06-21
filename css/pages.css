@@ -1,0 +1,478 @@
+/* =========================
+   PAGE HERO
+   ========================= */
+
+/* Hier wordt de hero-sectie opgemaakt.
+   Dit is de grote titel-balk bovenaan elke pagina.
+   We geven padding zodat er ruimte rond de tekst is,
+   en we centreren alles mooi in het midden. */
+.page-hero {
+    padding: 70px 20px;
+    text-align: center;
+    color: #fff;
+
+    /* Hier gebruiken we een gradient zodat de achtergrond
+       er moderner en minder vlak uitziet. */
+    background: linear-gradient(135deg, #2c3e50, #3a536b);
+}
+
+/* Hier passen we de achtergrond aan per pagina.
+   Dus About, Blog en Contact krijgen elk een eigen look. */
+.about-hero { background: linear-gradient(135deg, #2c3e50, #34495e); }
+.blog-hero { background: linear-gradient(135deg, #1a2a3a, #2c3e50); }
+.contact-hero { background: linear-gradient(135deg, #2c3e50, #1f2d3a); }
+
+/* Hier beperken we de breedte van de tekst,
+   zodat het niet te breed wordt op grote schermen. */
+.page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Hier maken we de titel groot zodat die direct opvalt. */
+.page-hero h1 {
+    font-size: 36px;
+    margin: 0 0 12px;
+}
+
+/* Hier maken we de subtitel iets kleiner en minder fel
+   zodat de focus op de titel blijft. */
+.page-hero p {
+    font-size: 16px;
+    opacity: 0.85;
+    margin: 0;
+}
+
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+
+/* Hier wordt de missie-sectie opgebouwd.
+   Dit is de uitleg over het bedrijf. */
+.about-missie {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+/* Hier zetten we tekst en afbeelding naast elkaar.
+   Dit gebeurt met grid zodat het netjes verdeeld is. */
+.about-missie-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Dit is een klein label boven de titel.
+   Het wordt in hoofdletters gezet voor extra nadruk. */
+.sectie-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #3498db;
+}
+
+/* Hier wordt de titel van de missie groter gemaakt
+   zodat het duidelijk een belangrijke sectie is. */
+.missie-tekst h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin: 8px 0 18px;
+}
+
+/* Dit zijn de gewone paragrafen.
+   Die worden leesbaar gemaakt met voldoende line-height. */
+.missie-tekst p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Hier worden de statistieken naast elkaar gezet.
+   Bijvoorbeeld jaren ervaring en klanten. */
+.missie-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Elke statistiek wordt onder elkaar gezet (getal + label). */
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dit is het grote cijfer dat opvalt. */
+.stat-getal {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+/* Dit is de uitleg onder het cijfer. */
+.stat-label {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Hier komt de placeholder afbeelding.
+   Dit is een visuele box zonder echte afbeelding. */
+.about-img-placeholder {
+    background: linear-gradient(135deg, #e8f4ff, #cfe7fb);
+    border-radius: 12px;
+    height: 320px;
+
+    /* Alles wordt gecentreerd zodat het netjes oogt. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Hier wordt het icoon extra groot gemaakt. */
+.about-img-placeholder span {
+    font-size: 64px;
+    margin-bottom: 12px;
+}
+
+/* Hier staat de tekst onder het icoon. */
+.about-img-placeholder p {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   WAARDEN SECTIE
+   ========================= */
+
+/* Hier wordt een achtergrondkleur toegevoegd
+   zodat deze sectie los staat van de rest. */
+.about-waarden {
+    background: #f7faff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+/* Titel van deze sectie wordt groter gemaakt. */
+.about-waarden h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* Hier worden de kaarten automatisch naast elkaar gezet.
+   Op kleine schermen worden ze onder elkaar gezet. */
+.waarden-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+/* Elke kaart krijgt een witte achtergrond en border.
+   Dit maakt het duidelijk een “blok”. */
+.waarde-kaart {
+    background: #fff;
+    border: 1px solid #e6edf5;
+    border-radius: 10px;
+    padding: 28px 20px;
+
+    /* Hier wordt hover effect voorbereid. */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Wanneer je over een kaart gaat,
+   komt hij iets omhoog voor interactiegevoel. */
+.waarde-kaart:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* Dit is het icoon bovenaan elke kaart. */
+.waarde-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Titel in de kaart */
+.waarde-kaart h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin: 0 0 8px;
+}
+
+/* Tekst in de kaart */
+.waarde-kaart p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* =========================
+   BLOG SECTION
+   ========================= */
+
+/* Hier wordt de blog featured sectie opgebouwd.
+   Dit is het grote artikel bovenaan. */
+.blog-featured {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Hier worden afbeelding en tekst naast elkaar gezet. */
+.blog-featured-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: #f7faff;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Dit is de placeholder voor de afbeelding.
+   Die wordt groot gemaakt zodat hij opvalt. */
+.blog-img-placeholder {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: #fff;
+}
+
+/* Dit is de echte achtergrond van featured image. */
+.featured-placeholder {
+    background: linear-gradient(135deg, #2c3e50, #1a2a3a);
+    height: 100%;
+}
+
+/* Tekstgedeelte van featured blog */
+.blog-featured-tekst {
+    padding: 20px 40px 20px 0;
+}
+
+/* Tag boven artikel (zoals “Gaming”, “Hardware”) */
+.blog-tag {
+    display: inline-block;
+    background: #2c3e50;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* Titel van artikel */
+.blog-featured-tekst h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0 0 14px;
+    line-height: 1.3;
+}
+
+/* Tekst van artikel */
+.blog-featured-tekst p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+/* Info zoals datum en leestijd */
+.blog-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 18px;
+}
+
+/* Knop om artikel te openen */
+.lees-meer-btn {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Hover effect op knop */
+.lees-meer-btn:hover {
+    background: #34495e;
+}
+
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+/* Hier wordt de volledige contact sectie gecentreerd. */
+.contact-sectie {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+/* Form en info worden naast elkaar gezet. */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+}
+
+/* Titels van form en info */
+.contact-form-box h2,
+.contact-info-box h2 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin: 0 0 24px;
+}
+
+/* Elke rij in het formulier */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Elke inputgroep */
+.form-group {
+    margin-bottom: 16px;
+}
+
+/* Label boven input */
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+/* Input velden zelf */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dbe4ee;
+    border-radius: 6px;
+}
+
+/* Wanneer input geselecteerd wordt */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #2c3e50;
+}
+
+/* Error state als iets fout is ingevuld */
+.form-group.has-error input {
+    border-color: #e74c3c;
+}
+
+/* Error tekst */
+.form-error {
+    color: #e74c3c;
+    font-size: 12px;
+    display: none;
+}
+
+/* Alleen zichtbaar als er fout is */
+.form-group.has-error .form-error {
+    display: block;
+}
+
+/* Verstuur knop */
+.verzend-btn {
+    background: #2c3e50;
+    color: #fff;
+    padding: 13px 26px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Info blok rechts */
+.info-kaart {
+    background: #f7faff;
+    border-radius: 12px;
+    padding: 10px 24px;
+}
+
+/* Elke info rij */
+.info-item {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e6edf5;
+}
+
+/* Laatste rij geen lijn */
+.info-item:last-child {
+    border-bottom: none;
+}
+
+/* Hier zorgt de iframe (Google Maps) ervoor dat hij als een blok wordt weergegeven.
+   Daardoor neemt hij de volledige breedte in plaats van inline te staan met tekst. */
+.kaart-placeholder iframe {
+    display: block;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Hier wordt een media query gebruikt.
+   Dat betekent: alles hieronder geldt alleen als het scherm kleiner is dan 800px.
+   Dit is voor tablets en gsm’s zodat de layout zich aanpast. */
+@media (max-width: 800px) {
+
+    /* Hier worden de 3 grote grid-layouts onder elkaar gezet.
+       Dus in plaats van naast elkaar, worden ze stap per stap gestapeld.
+       Dit maakt het beter leesbaar op kleine schermen. */
+    .about-missie-inner,
+    .blog-featured-inner,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hier krijgt de blog-tekst extra padding.
+       Zo staat de tekst niet tegen de randen van het scherm op mobiel. */
+    .blog-featured-tekst {
+        padding: 0 24px 24px;
+    }
+
+    /* Hier wordt het formulier ook aangepast voor mobiel.
+       De voornaam en achternaam komen onder elkaar te staan
+       in plaats van naast elkaar. */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hier wordt de nieuwsbrief input + knop onder elkaar gezet.
+       Dit is handiger op een klein scherm waar weinig breedte is. */
+    .nieuwsbrief-form {
+        flex-direction: column;
+    }
+}

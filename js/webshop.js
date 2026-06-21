@@ -9,7 +9,6 @@
 //     }
  
 // ];
-
 async function renderHomeProducten() {
     const grid = document.querySelector("#product-grid");
     if (!grid) return;

@@ -3,39 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webshop</title>
-    <link rel="stylesheet" href="css/webshop.css">
-    <script src = "app.js"></script>
-    <script type="module" src="js/webshop.js" ></script>
-   
+    <title>Contact - Webshop</title>
 
+    <!-- CSS bestanden: zorgen voor styling van de pagina -->
+    <link rel="stylesheet" href="css/webshop.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- JavaScript voor algemene functies -->
+    <script src="app.js"></script>
 </head>
+
 <body>
+
+    <!-- ========================= -->
+    <!-- BOVENSTE BALK -->
+    <!-- ========================= -->
     <div class="bovenste-balk">
         <div class="marquee-tekst">
-            <span>Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven, alihaydarberk2008@gmail.com, +32 474 12 34 56</span>
+            <span>
+                Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven,
+                alihaydarberk2008@gmail.com, +32 474 12 34 56
+            </span>
         </div>
     </div>
 
+    <!-- ========================= -->
+    <!-- NAVIGATIE -->
+    <!-- ========================= -->
     <section class="home">
         <div class="overlay">
+
             <header class="home_header">
-                <ul class="menu">
-                    <li><a href="webshop_home.html">HOME</a></li>
+
+                <!-- Menu knop voor mobiel -->
+                <button class="menu-toggle" id="menuToggle">☰</button>
+
+                <!-- Navigatie links -->
+                <ul class="menu" id="navMenu">
+                    <li><a href="index_home.html">PRODUCTS</a></li>
                     <li><a href="index_about.html">ABOUT</a></li>
                     <li><a href="index.blog.html">BLOG</a></li>
-                    <li><a href="index_contact.html">CONTACT</a></li>
+                    <li><a href="index_contact.html" class="active-link">CONTACT</a></li>
                 </ul>
-            </header>
-            <div>
-            <form action="Search" class="search-form">
-     <input type="search" autofocus required>
-        <i class="fa fa-search"></i>
-        <button onclick="clearInput()">Clear</a>
-        </form>
-        </div>
 
-        
-    
-        
+                <!-- Winkelwagen knop -->
+                <button class="cart-btn" id="cartBtn">
+                    🛒 <span class="cart-badge">0</span>
+                </button>
+
+            </header>
+
+        </div>
     </section>
+
+    <!-- ========================= -->
+    <!-- HOOFDINHOUD -->
+    <!-- ========================= -->
+    <main class="main-content">
+
+        <!-- HERO (titel bovenaan pagina) -->
+        <section class="page-hero contact-hero">
+
+            <div class="page-hero-inner">
+
+                <h1>Neem Contact Op</h1>
+
+                <p>
+                    Heb je een vraag over een bestelling of product?
+                    We helpen je graag!
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ========================= -->
+        <!-- CONTACT SECTIE -->
+        <!-- ========================= -->
+        <section class="contact-sectie">
+
+            <div class="contact-grid">
+
+                <!-- FORMULIER -->
+                <div class="contact-form-box">
+
+                    <h2>Stuur ons een bericht</h2>
+
+                    <!-- Formulier zonder reload (wordt via JS gecontroleerd) -->
+                    <form class="contact-form" id="contactForm" novalidate>
+
+                        <!-- Voornaam + Achternaam -->
+                        <div class="form-row">
+
+                            <div class="form-group" id="groupVoornaam">
+                                <label>Voornaam</label>
+                                <input type="text" id="voornaam">
+                                <span class="form-error">Vul je voornaam in</span>
+                            </div>
+
+                            <div class="form-group" id="groupAchternaam">
+                                <label>Achternaam</label>
+                                <input type="text" id="achternaam">
+                                <span class="form-error">Vul je achternaam in</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group" id="groupEmail">
+                            <label>E-mailadres</label>
+                            <input type="email" id="email">
+                            <span class="form-error">Vul een geldig e-mailadres in</span>
+                        </div>
+
+                        <!-- Onderwerp -->
+                        <div class="form-group">
+                            <label>Onderwerp</label>
+                            <select id="onderwerp">
+                                <option>Vraag over bestelling</option>
+                                <option>Productinformatie</option>
+                                <option>Retour & Garantie</option>
+                                <option>Andere</option>
+                            </select>
+                        </div>
+
+                        <!-- Bericht -->
+                        <div class="form-group" id="groupBericht">
+                            <label>Bericht</label>
+                            <textarea id="bericht"></textarea>
+                            <span class="form-error">Minstens 10 tekens</span>
+                        </div>
+
+                        <!-- Verstuur knop -->
+                        <button type="submit">Verstuur Bericht</button>
+
+                        <!-- Bevestiging tekst -->
+                        <p id="form-bevestiging" style="display:none;">
+                            ✓ Bericht verzonden!
+                        </p>
+
+                    </form>
+                </div>
+
+                <!-- INFO BLOK -->
+                <div class="contact-info-box">
+
+                    <h2>Onze Gegevens</h2>
+
+                    <!-- Info kaarten -->
+                    <div>
+                        <p>📍 Diestsestraat 163, Leuven</p>
+                        <p>📧 Email: alihayderberk2008@gmail.com</p>
+                        <p>📞 +32 474 12 34 56</p>
+                        <p>🕐 Ma–Vr: 9:00 – 18:00</p>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2517.3!2d4.7005!3d50.8798"
+                        width="100%"
+                        height="220">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+    <footer class="site-footer">
+        <p>2026 Webshop</p>
+    </footer>
+
+    <!-- ========================= -->
+    <!-- FORM VALIDATIE (JAVASCRIPT) -->
+    <!-- ========================= -->
+    <script>
+
+        // We pakken het hele formulier
+        const form = document.getElementById("contactForm");
+
+        // Functie om fout styling aan/uit te zetten
+        function toonFout(groupId, fout) {
+
+            // groep = input veld + error tekst
+            const groep = document.getElementById(groupId);
+
+            // als fout = true → rode styling tonen
+            // als fout = false → rode styling weghalen
+            groep.classList.toggle("has-error", fout);
+        }
+
+        // Wanneer gebruiker op "verstuur" klikt
+        form.addEventListener("submit", (e) => {
+
+            // voorkomt dat pagina herlaadt
+            e.preventDefault();
+
+            // we halen alle ingevulde waarden op
+            const voornaam = document.getElementById("voornaam").value.trim();
+            const achternaam = document.getElementById("achternaam").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const bericht = document.getElementById("bericht").value.trim();
+
+            // we controleren of email correct is
+            const emailGeldig = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            let geldig = true;
+
+            // Voornaam moet ingevuld zijn
+            if (voornaam.length === 0) {
+                toonFout("groupVoornaam", true);
+                geldig = false;
+            } else {
+                toonFout("groupVoornaam", false);
+            }
+
+            // Achternaam moet ingevuld zijn
+            if (achternaam.length === 0) {
+                toonFout("groupAchternaam", true);
+                geldig = false;
+            } else {
+                toonFout("groupAchternaam", false);
+            }
+
+            // Email moet correct zijn
+            if (!emailGeldig) {
+                toonFout("groupEmail", true);
+                geldig = false;
+            } else {
+                toonFout("groupEmail", false);
+            }
+
+            // Bericht moet minstens 10 tekens zijn
+            if (bericht.length < 10) {
+                toonFout("groupBericht", true);
+                geldig = false;
+            } else {
+                toonFout("groupBericht", false);
+            }
+
+            // Als iets fout is → stop en toon melding
+            if (!geldig) {
+                window.showToast("Controleer de gemarkeerde velden");
+                return;
+            }
+
+            // Als alles goed is → succes melding
+            document.getElementById("form-bevestiging").style.display = "block";
+
+            window.showToast("Bericht verzonden!");
+
+            // formulier resetten
+            form.reset();
+        });
+
+    </script>
+
+</body>
+</html>

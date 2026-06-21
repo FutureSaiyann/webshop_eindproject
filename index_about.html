@@ -3,39 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webshop</title>
-    <link rel="stylesheet" href="css/webshop.css">
-    <script src = "app.js"></script>
-    <script type="module" src="js/webshop.js" ></script>
-   
+    <title>About - Webshop</title>
 
+    <!-- Hier linken we onze CSS bestanden -->
+    <link rel="stylesheet" href="css/webshop.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- JavaScript bestand (voor interacties zoals cart/menu) -->
+    <script src="app.js"></script>
 </head>
+
 <body>
+
+    <!-- Bovenste balk met bewegende tekst -->
     <div class="bovenste-balk">
         <div class="marquee-tekst">
-            <span>Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven, alihaydarberk2008@gmail.com, +32 474 12 34 56</span>
+            <span>
+                Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven,
+                alihaydarberk2008@gmail.com, +32 474 12 34 56
+            </span>
         </div>
     </div>
 
+    <!-- NAVIGATIE + HEADER -->
     <section class="home">
         <div class="overlay">
+
             <header class="home_header">
-                <ul class="menu">
-                    <li><a href="webshop_home.html">HOME</a></li>
-                    <li><a href="index_about.html">ABOUT</a></li>
+
+                <!-- Menu knop (voor mobiele versie) -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">☰</button>
+
+                <!-- Navigatie menu -->
+                <ul class="menu" id="navMenu">
+                    <li><a href="index_home.html">PRODUCTS</a></li>
+                    <li><a href="index_about.html" class="active-link">ABOUT</a></li>
                     <li><a href="index.blog.html">BLOG</a></li>
                     <li><a href="index_contact.html">CONTACT</a></li>
                 </ul>
+
+                <!-- Winkelwagen knop -->
+                <button class="cart-btn" id="cartBtn" aria-label="Winkelwagen openen">
+                    🛒
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+
             </header>
-            <div>
-            <form action="Search" class="search-form">
-     <input type="search" autofocus required>
-        <i class="fa fa-search"></i>
-        <button onclick="clearInput()">Clear</a>
-        </form>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- HOOFDINHOUD VAN DE PAGINA -->
+    <!-- ========================= -->
+    <main class="main-content">
+
+        <!-- HERO SECTION -->
+        <section class="page-hero about-hero">
+            <div class="page-hero-inner">
+
+                <!-- Grote titel van de pagina -->
+                <h1>Over Ons</h1>
+
+                <!-- Kleine uitleg onder de titel -->
+                <p>
+                    Meer dan 15 jaar passie voor technologie — in het hart van Leuven
+                </p>
+
+            </div>
+        </section>
+
+        <!-- MISSIE SECTION -->
+        <section class="about-missie">
+            <div class="about-missie-inner">
+
+                <!-- Tekst links -->
+                <div class="missie-tekst">
+
+                    <span class="sectie-label">Onze Missie</span>
+
+                    <h2>Wij bouwen de PC van jouw dromen</h2>
+
+                    <p>
+                        Sinds 2009 helpen wij gamers, creators en professionals met het samenstellen
+                        van de perfecte computer. Alles wordt op maat gemaakt.
+                    </p>
+
+                    <p>
+                        We doen geen massaproductie, maar zorgen dat elke PC getest en perfect werkt.
+                    </p>
+
+                    <!-- Statistieken -->
+                    <div class="missie-stats">
+
+                        <div class="stat">
+                            <span class="stat-getal" data-count="15" data-suffix="+">0</span>
+                            <span class="stat-label">Jaar ervaring</span>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-getal" data-count="4200" data-suffix="+">0</span>
+                            <span class="stat-label">Tevreden klanten</span>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-getal" data-count="98" data-suffix="%">0</span>
+                            <span class="stat-label">Positieve reviews</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Rechter kant (afbeelding blok) -->
+                <div class="missie-afbeelding">
+                    <div class="about-img-placeholder">
+                        <span>🖥️</span>
+                        <p>Custom PC Builds<br>sinds 2009</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WAARDEN SECTION -->
+        <section class="about-waarden">
+
+            <h2>Waarom Klanten Voor Ons Kiezen</h2>
+
+            <div class="waarden-grid">
+
+                <div class="waarde-kaart">
+                    <span class="waarde-icon">⚡</span>
+                    <h3>Snelle Levering</h3>
+                    <p>Besteld vandaag, morgen geleverd.</p>
+                </div>
+
+                <div class="waarde-kaart">
+                    <span class="waarde-icon">🔧</span>
+                    <h3>Garantie</h3>
+                    <p>2 jaar garantie op alle systemen.</p>
+                </div>
+
+                <div class="waarde-kaart">
+                    <span class="waarde-icon">💬</span>
+                    <h3>Advies</h3>
+                    <p>We helpen je kiezen zonder druk.</p>
+                </div>
+
+                <div class="waarde-kaart">
+                    <span class="waarde-icon">🏆</span>
+                    <h3>Kwaliteit</h3>
+                    <p>Alle systemen worden getest voor levering.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section class="about-team">
+
+            <h2>Ons Team</h2>
+
+            <div class="team-grid">
+
+                <div class="team-kaart">
+                    <div class="team-avatar">AH</div>
+                    <h3>Ali Hayder</h3>
+                    <span class="team-functie">Oprichter</span>
+                    <p>Hij startte het bedrijf en zorgt voor de visie.</p>
+                </div>
+
+                <div class="team-kaart">
+                    <div class="team-avatar">SK</div>
+                    <h3>Sara</h3>
+                    <span class="team-functie">Hardware Specialist</span>
+                    <p>Zij bouwt en test alle PC’s.</p>
+                </div>
+
+                <div class="team-kaart">
+                    <div class="team-avatar">JM</div>
+                    <h3>Jonas</h3>
+                    <span class="team-functie">Support</span>
+                    <p>Helpt klanten met problemen en vragen.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>
+                    Wij maken custom PC’s voor gamers en creators in België.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    Leuven<br>
+                    Email: alihaydarberk2008@gmail.com<br>
+                    Tel: +32 474 12 34 56
+                </p>
+            </div>
+
         </div>
 
-        
-    
-        
-    </section>
+        <div class="footer-bottom">
+            <p>2026 Webshop. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- ========================= -->
+    <!-- ANIMATIE VOOR STATISTIEKEN -->
+    <!-- ========================= -->
+    <script>
+
+        // Deze functie laat cijfers omhoog tellen (animatie effect)
+        function animeerTelling(element) {
+
+            // Het eindgetal dat we willen bereiken
+            const doel = Number(element.dataset.count);
+
+            // Extra teken zoals + of %
+            const suffix = element.dataset.suffix || "";
+
+            // Hoe lang de animatie duurt (1.5 seconde)
+            const duur = 1500;
+
+            // Starttijd van animatie
+            const start = performance.now();
+
+            function stap(nu) {
+
+                // Hoe ver we zijn in de animatie (0 tot 1)
+                const voortgang = Math.min((nu - start) / duur, 1);
+
+                // Bereken huidig getal
+                const waarde = Math.floor(voortgang * doel);
+
+                // Zet tekst in HTML
+                element.textContent = waarde + suffix;
+
+                // Zolang niet klaar → blijven updaten
+                if (voortgang < 1) requestAnimationFrame(stap);
+            }
+
+            requestAnimationFrame(stap);
+        }
+
+        // Observer kijkt wanneer elementen in beeld komen
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                // Als element zichtbaar wordt op scherm
+                if (entry.isIntersecting) {
+
+                    // Start animatie
+                    animeerTelling(entry.target);
+
+                    // Stop observer zodat het maar 1 keer gebeurt
+                    observer.unobserve(entry.target);
+                }
+            });
+
+        }, { threshold: 0.5 });
+
+        // We observeren alle cijfers
+        document.querySelectorAll(".stat-getal").forEach(el =>
+            observer.observe(el)
+        );
+
+    </script>
+
+</body>
+</html>

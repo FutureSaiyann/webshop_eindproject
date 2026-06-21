@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hier wordt ingesteld dat de website responsive is.
+         Dus hij past zich aan op gsm, tablet en pc. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Webshop</title>
+
+    <!-- Hier wordt de CSS ingeladen.
+         Dat zorgt ervoor dat de website er mooi uitziet (layout, kleuren, etc.). -->
+    <link rel="stylesheet" href="css/webshop.css">
+
+    <!-- Hier wordt JavaScript ingeladen.
+         Dat zorgt voor interactie zoals knoppen, winkelwagen, zoekfunctie... -->
+    <script src="app.js"></script>
+</head>
+
+<body>
+
+    <!-- Hier komt de bovenste balk met info zoals levering en contactgegevens.
+         Dit blijft altijd zichtbaar bovenaan de site. -->
+    <div class="bovenste-balk">
+        <div class="marquee-tekst">
+            <span>
+                Order today, delivered tomorrow! Diestsestraat 163, 3000 Leuven,
+                alihaydarberk2008@gmail.com, +32 474 12 34 56
+            </span>
+        </div>
+    </div>
+
+    <!-- Dit is de hoofdsectie (hero gedeelte) van de website.
+         Hier staat meestal menu + belangrijke functies. -->
+    <section class="home">
+        <div class="overlay">
+
+            <!-- Hier wordt de navigatiebalk gemaakt.
+                 Dit laat gebruikers door de website gaan. -->
+            <header class="home_header">
+
+                <!-- Dit is de menu knop voor mobiele weergave.
+                     Hiermee kan je het menu openen/sluiten op gsm. -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">☰</button>
+
+                <!-- Dit is het navigatiemenu met links naar andere pagina’s.
+                     Zo kan de gebruiker navigeren tussen producten, about, blog en contact. -->
+                <ul class="menu" id="navMenu">
+                    <li><a href="index_home.html">PRODUCTS</a></li>
+                    <li><a href="index_about.html">ABOUT</a></li>
+                    <li><a href="index.blog.html">BLOG</a></li>
+                    <li><a href="index_contact.html">CONTACT</a></li>
+                </ul>
+
+                <!-- Dit is de winkelwagenknop.
+                     Hier wordt het aantal producten in de cart getoond. -->
+                <button class="cart-btn" id="cartBtn" aria-label="Winkelwagen openen">
+                    🛒
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+
+            </header>
+
+            <!-- Hier komt de zoekfunctie van de webshop.
+                 De gebruiker kan hier producten zoeken. -->
+            <div class="search-container">
+
+                <!-- Input veld waar de gebruiker tekst ingeeft. -->
+                <input type="text" id="searchInput" placeholder="Zoek naar producten...">
+
+                <!-- Hier worden zoekresultaten dynamisch getoond via JavaScript. -->
+                <ul id="productList" class="product-list"></ul>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dit is de hoofdinhoud van de website. -->
+    <main class="main-content">
+
+        <!-- Slider sectie (bijvoorbeeld promoties of banners).
+             Hier kan later een carousel komen. -->
+        <section class="slider"></section>
+
+        <!-- Hier worden alle producten getoond. -->
+        <section class="highlights">
+
+            <!-- Titel van de productsectie -->
+            <h2>Our Products</h2>
+
+            <!-- Hier worden producten automatisch ingeladen via JavaScript.
+                 Dus deze div blijft leeg in HTML, maar wordt gevuld via code. -->
+            <div id="product-grid" class="product-grid"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer = onderkant van de website met info en links -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <!-- Info over het bedrijf -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>
+                    We are your trusted partner for high-quality custom PCs and components.
+                    With over 15 years of experience, we deliver excellence.
+                </p>
+            </div>
+
+            <!-- Contactgegevens -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    Diestsestraat 163, 3000 Leuven<br>
+                    Email: alihaydarberk2008@gmail.com<br>
+                    Phone: +32 474 12 34 56
+                </p>
+            </div>
+
+            <!-- Extra links naar belangrijke pagina’s -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Onderste lijn van de footer -->
+        <div class="footer-bottom">
+            <p>2026 Webshop. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <!-- Overlay voor winkelwagen (achtergrond donker maken wanneer cart open is) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Zijpaneel van de winkelwagen -->
+    <aside class="cart-drawer" id="cartDrawer">
+
+        <div class="cart-drawer-header">
+            <h2>Winkelwagen</h2>
+
+            <!-- Knop om winkelwagen te sluiten -->
+            <button id="cartCloseBtn" aria-label="Sluiten">×</button>
+        </div>
+
+        <!-- Hier komen de producten in de winkelwagen -->
+        <div class="cart-items" id="cartItems"></div>
+
+        <!-- Onderkant van winkelwagen met totaalprijs -->
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Totaal</span>
+                <span id="cartTotal">€0,00</span>
+            </div>
+
+            <!-- Checkout knop (wordt actief als er items zijn) -->
+            <button class="checkout-btn" id="checkoutBtn" disabled>
+                Afrekenen
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- Toast melding (kleine popup berichten zoals "toegevoegd aan winkelwagen") -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Hier worden extra JavaScript bestanden ingeladen:
+         database.js = data van producten
+         webshop.js = logica van winkelwagen, search, etc. -->
+    <script src="js/database.js"></script>
+    <script src="js/webshop.js"></script>
+
+</body>
+</html>
